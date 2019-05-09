@@ -170,13 +170,19 @@ class Array
     
   end
 
-  def my_inject(&block)
-    accumulator = 0
-    self.each do |item|
-      accumulator = item
-      accumulator = block.call(item)
+  def my_inject(acc = nil, &block)
+    i = 0
+    if acc == nil
+      acc = self.first
+      i += 1
     end
-    inject
+
+    while i < self.length
+      acc = block.call(acc, self[i])
+      i += 1
+    end
+
+    acc
   end
 end
 
@@ -189,5 +195,6 @@ end
 # # => "Yay for strings!"
 # ```
 
-def concatenate(strings)
+def concatenate(strings) 
+  strings.inject {|accu, item| accu += item }
 end
