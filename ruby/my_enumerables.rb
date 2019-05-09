@@ -50,9 +50,7 @@ class Array
       flattened
     end
 
-   def factors(num)
-      num % 
-   end
+  
 
 
 end
