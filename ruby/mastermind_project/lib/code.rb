@@ -13,7 +13,9 @@ class Code
   end
 
   def self.random(size)
-    array = Array.new(size, Code::POSSIBLE_PEGS.keys.sample)
+    raise "error, size must be integer" unless size.instance_of?(Integer)
+
+    array = Array.new(size) {Code::POSSIBLE_PEGS.keys.sample}
     Code.new(array)
   end
 

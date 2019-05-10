@@ -7,7 +7,6 @@ class Game
 
     def initialize(player1, player2)
         @fragment = ""
-
         @players = [player1, player2] 
     end
 
@@ -33,19 +32,20 @@ class Game
     end
 
     def current_player
-        @players
+        @players.first
     end
 
     def previous_player
-
+        @players.last
     end
 
     def next_player!
-
+        @players.last
     end
 
     def take_turn(player)
-
+        "please enter a letter"
+        guess = gets.chomp
     end
     
 end
