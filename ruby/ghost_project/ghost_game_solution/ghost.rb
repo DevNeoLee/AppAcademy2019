@@ -12,9 +12,9 @@ class GhostGame
     @losses = Hash.new { |losses, player| losses[player] = 0 } # 사용자에 따라, 실패횟수 해쉬자료
   end
 
-  def run # 게임이 끝날때까지 게임을 플레이 해줍니다. 
+  def run # 게임이 끝날때까지 게임을 플레이 해줍니다.
     play_round until game_over?
-    puts "#{winner} wins!" # 그중 한명이 이길때 까지네요.
+    puts "#{winner} wins!" # 그중 한명이 이길때 까지.
   end
 
   private # ??단어조각, 사전, 실패횟수, 사용자들 모두 private로 만들어줄 이유가 있나요??
@@ -65,23 +65,24 @@ class GhostGame
   end
 
   def next_player!
-    players.rotate! # 사용자를 로테이트 하기. 사용자 어레이에서 순서를 바꿔 줌.
+    players.rotate! # 사용자를 로테이트 하기. 사용자 어레이에서 로테이트함.
     # keep rotating until we find a player who hasn't been eliminated
     players.rotate! until losses[current_player] < MAX_LOSS_COUNT
+    # 현제 사용자의 실패 갯수가 MAX_LOSS_COUNT 보다 적은 사용자 일때 까지 로테이트 해줌.
   end
 
-  def remaining_players
-    losses.count { |_, v| v < MAX_LOSS_COUNT }
+  def remaining_players # 남아있는 사용자들
+    losses.count { |_, v| v < MAX_LOSS_COUNT } #실패횟수 해쉬자료에서 카운트해줌, 실패횟수가 맥스횟수보다 적은자들, 즉 아직 살아남은 자들의.
   end
 
-  def winner
-    (player, _) = losses.find { |_, losses| losses < MAX_LOSS_COUNT }
+  def winner # 이긴 사용자, 승리자 , losses이라는 해쉬자료에서 정보를 긁어냄.
+    (player, _) = losses.find { |_, losses| losses < MAX_LOSS_COUNT } # losses해쉬자료에서 
     player
   end
 
-  def record(player)
-    count = losses[player]
-    "GHOST".slice(0, count)
+  def record(player) # 사용자의
+    count = losses[player] # 실패 해쉬정보 횟수를 이용하여
+    "GHOST".slice(0, count) # 5개글씨에서 그 횟수를 잘라냄.
   end
 
   # UI methods (display game status and prompts to players) 
@@ -120,21 +121,22 @@ class GhostGame
     sleep(2) # 2초간 화면을 멈춤.
   end
 
-  def update_standings
+  def update_standings #방금전 일어난 상황 화면에 보여줌
     system("clear")
-    puts "#{previous_player} spelled #{fragment}."
+    puts "#{previous_player} spelled #{fragment}." #맞춘 단어조각 보여줌
     puts "#{previous_player} gets a letter!"
 
-    losses[previous_player] += 1
+    losses[previous_player] += 1 #이전 사용자의 실패 횟수를 하나 올림 
 
-    if losses[previous_player] == MAX_LOSS_COUNT
-      puts "#{previous_player} has been eliminated!"
+    if losses[previous_player] == MAX_LOSS_COUNT #실패횟수가 맥스랑 같으면
+      puts "#{previous_player} has been eliminated!" #게임 끝났음을 알림.
     end
 
-    display_standings
+    display_standings # 기록을 화면에 다 보여주고
 
-    sleep(2)
+    sleep(2) # 2초간 멈춘다.
   end
+  
 end
 
 if __FILE__ == $PROGRAM_NAME
