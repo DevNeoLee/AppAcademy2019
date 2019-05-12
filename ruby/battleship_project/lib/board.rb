@@ -4,7 +4,7 @@ class Board
       grid.each {|row| puts row.join(" ")} # 투디멘션 그리드 각 x 좌표들 한줄에 프린트 하기
     end
 
-  attr_reader :size
+  attr_reader :size # 사이즈 정보는, 감춰야 할 정보는 아닙으로.
 
   def initialize(n)
     @grid = Array.new(n) { Array.new(n, :N)} # 투디멘션 그리드, 를 만들기
@@ -22,7 +22,7 @@ class Board
     @grid[row][column] = val
   end
 
-  def num_ships
+  def num_ships # 현제 배의 갯수를 나타내 준다. 
 
     #최상 방식
     @grid.flatten.count {|ele| ele == :S}
@@ -50,7 +50,7 @@ class Board
     # count
   end
 
-  def attack(position)
+  def attack(position) # 배의 위치가 들어가서 맞으면, 배가 (힛 hit, :H) 됐다고 보여주고 아니면, 못맞춤 불리언 정보를 준다. 
     if self[position] == :S 
         self[position] = :H
         p 'you sunk my battleship!'
@@ -61,7 +61,7 @@ class Board
     end
   end
 
-  def place_random_ships
+  def place_random_ships # 정확히 원하는 배의 비율이 확보 될때까지 넣어준다.
     max_ships = 0.25 * @size
 
     while num_ships < max_ships # while을 사용하여, 특정 숫자 까지 넣어주기
@@ -77,11 +77,11 @@ class Board
   end
 
  
-  def cheat
+  def cheat # 그리드 내부를 감추지 않고 보여준다.
     Board.print_grid(@grid)
   end
 
-  def print 
+  def print # 그리드를 감추고 보여준다.
     Board.print_grid(hidden_ships_grid)
   end
 
