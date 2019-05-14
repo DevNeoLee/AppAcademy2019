@@ -93,17 +93,101 @@ class Board
 
     def square(idx)
         tiles = []
+        x = (idx / 3) * 3
+        y = (idx % 3) * 3
+
+        (x...x + 3).each do |i|
+            (y...y + 3).each do |j|
+                tiles << self[i, j]
+            end
+        end
+
+        tiles
     end
 
     def squares
+        (0..8).to_a.map {|i| square(i)}
 
     end
 
     def dup
+        duped_grid = grid.map do |row|
+            row.map {|tile| Tile.new(tile.value)}
+        end
 
+        Board.new(duped_grid)
     end
 
     private
 
     attr_reader :grid
+end
+
+class SudokuGame
+    def self.from_file(filename)
+        board = Board.from_file(filename)
+        self.new(board)
+    end
+
+    def initialize(board)
+        @board = board
+    end
+
+    def get_pos
+        pos = nil
+        until pos && valid_pos?(pos)
+            puts "Please enter a position on the board (e.g., '3,4')"
+            print ">"
+            pos = parse_pos(gets.chomp)
+        end
+        pos
+    end
+
+    def get_val
+        val = nil 
+        until val && valid_val?(val)
+            puts "Please enter a value bet 1 and 9 (0 to clear the tile)"
+            print ">"
+            val = parse_val(gets.chomp)
+        end
+        val
+    end
+
+    def parse_pos(string)
+        string.split(",").map {|char| Integer(char)}
+    end
+
+    def parse_val(string)
+        Integer(string)
+    end
+
+    def play_turn
+        board.render
+        pos = get_pos
+        val = get_val
+        board[pos] = val
+    end
+
+    def run
+        play_turn until solved?
+        board.render
+        puts "Congratulations, you win!"
+    end
+
+    def solved?
+        board.solved?
+    end
+
+    def valid_pos?(pos)
+        pos.is_a?(Array) &&
+        pos.length == 2 &&
+        pos.all? {|x| x.between?(0, board.size - 1)}
+    end
+
+    def valid_val?(val)
+        val.is_a?(Integer) && val.between?(0, 9)
+    end
+
+    private
+    attr_reader :board
 end
