@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<div class="box-container">
+    <% @posts.each do |post| %>
+      <div class="box col-md-6">
+      <img class="image" src="<%=post.picture %>">
+        <div class="padding">
+        <div class ="buttons"
+            <%= link_to 'Show', post %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        
+          <div class="hit">
+          
+            조회<%= post.hit %>회
+          </div> 
+          <%= post.description %>
+          </div>
+        </div>
+        <br> 
+    <% end %>
+  </div>
+
+<br>
+ 
+<%= link_to 'New Post', new_post_path %>
