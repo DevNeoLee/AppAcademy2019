@@ -1,1 +1,13 @@
-<h1> Hello, My Blog</h1>
+<h1> Blog_1 </h1>
+
+<form action="/blog/create">
+    First: <input type="text" name="irum" placeholder="작성자"><br>
+    Second: <textarea name="naeyong"></textarea><br>
+    <input type="submit" value="submit"><br>
+</form>
+<br>
+
+<% @posts.each do |post| %>
+  <li>  <%=post.writer%> : <%=post.content%> </li>
+<% end %>
+
