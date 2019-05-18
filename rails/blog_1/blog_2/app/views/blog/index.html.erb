@@ -5,6 +5,7 @@
         <%=post.user%> 
         <a href="blog/delete?id=<%=post.id%>">delete</a>
         <a href="blog/edit?id=<%=post.id%>">edit</a>
+        <p><%=post.updated_at %></p>
         <pre><%=post.message%><pre>
     </li>
 <% end %>
