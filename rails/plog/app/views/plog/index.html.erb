@@ -1,1 +1,14 @@
-<h1>hello plog!</h1>
+<h1>third blog, my own</h1>
+    <% @posts.each do |post| %>
+        <li>
+         <%=post.user%> <a href="/plog/edit?id=<%=post.id%>"> edit</a> <a href="/plog/delete?id=<%=post.id%>"> delete</a>
+         <p><%=post.updated_at%></p>
+         <pre><%= post.message%></pre>
+       </li><br>
+    <%end%>
+
+    <form action="/plog/create">
+        <input type="text" name="input1"><br><br>
+        <textarea name="input2"></textarea><br><br>
+        <input type="submit">
+    </form>

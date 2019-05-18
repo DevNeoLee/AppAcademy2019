@@ -1,0 +1,8 @@
+<h1>edit</h1>
+
+  <form action="/plog/update">
+        <input type='hidden' name="id" value="<%=@post.id%>">
+        <input type="text" name="input1" value="<%=@post.user%>"><br><br>
+        <textarea name="input2"><%=@post.message%></textarea><br><br>
+        <input type="submit">
+    </form>
