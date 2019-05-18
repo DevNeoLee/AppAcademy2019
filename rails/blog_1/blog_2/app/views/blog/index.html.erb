@@ -1,0 +1,18 @@
+<h1>blog_2, my own try</h1>
+
+<% @posts.each do |post| %>
+    <li>
+        <%=post.user%> 
+        <a href="blog/delete?id=<%=post.id%>">delete</a>
+        <a href="blog/edit?id=<%=post.id%>">edit</a>
+        <pre><%=post.message%><pre>
+    </li>
+<% end %>
+<br>
+
+<form action = "/blog/create">
+    Your Name: <input type="text" name="input1"><br><br>
+    Message: <textarea name="input2"></textarea><br>
+    <input type="submit">
+</form>
+
