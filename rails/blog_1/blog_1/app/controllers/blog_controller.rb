@@ -13,6 +13,10 @@ class BlogController < ApplicationController
         redirect_to :root
     end
 
+    def edit
+        @post = Post.find(params[:id])
+    end
+
     def update
         pp = Post.find(params[:id])
         pp.writer = params[:irum]
