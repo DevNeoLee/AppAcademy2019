@@ -1,0 +1,2 @@
+module BlogaHelper
+end

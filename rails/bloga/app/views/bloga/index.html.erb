@@ -1,0 +1,21 @@
+<h1>hello bloga 4th blog</h1>
+
+<% @posts.each do |post| %>
+    <li>
+        <%=post.user %> <a href="bloga/delete?id=<%=post.id%>">delete</a> <a href="bloga/edit?id=<%=post.id%>">edit</a>
+        <pre><%=post.message %></pre>
+        <pre><%=post.email %></pre>
+        <p><%=post.updated_at%></p>
+    </li>
+<% end %>
+
+   <form action="bloga/create">
+       name: <input type="text" name="input1">
+        message: <textarea name="input2"></textarea>
+        email: <input type="email" name="input3">
+        <input type="submit" value="submit">
+    </form>
+
+
+    
+
