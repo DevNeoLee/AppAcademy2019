@@ -13,7 +13,6 @@ class Code
   end
 
   def self.random(size) # 클래스 메쏘드, 랜덤 페그로 새로운 게임 셋을 만들어 줌
-
     array = Array.new(size) {Code::POSSIBLE_PEGS.keys.sample}
     Code.new(array)
   end
