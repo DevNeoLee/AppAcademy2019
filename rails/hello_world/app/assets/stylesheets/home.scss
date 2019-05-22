@@ -1,3 +1,26 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+$header-bg-color: #f0f0f0;
+@header-bg-color-hover :#e0e0e0;
+
+$header-height: 70px;
+
+#global-header{
+    display: fixed;
+    width: 100%;
+    height: $header-height;
+    top: 0;
+    left: 0;
+    background-color: $header-bg-color;
+}
+.logo {
+    display:inline-block;
+    height: 100%;
+    line-height: $header-height;
+    font-size :1.5em;
+    vertical-align: top;
+}
