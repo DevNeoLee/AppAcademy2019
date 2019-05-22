@@ -1,0 +1,20 @@
+<h1>hello from index</h1>
+
+<div>
+    2 + 2 = <%=2 + 3%><br>
+  <strong><%=  %>oh...</strong><br>
+  <% if 2 + 2 == 2 + 3 %>
+    <span> Yes, correct!</span>
+    <% else %>
+    <span> WEll, not sure.</span>
+    <% end %>
+</div>
+
+<h1> 김 이 유 조</h1>
+
+<% ['윤하', '김은채', '나얼', '이유신', '이윤하'].each do |name|%>
+    <pre><%=name %></pre>
+<% end %>
+
+<h1>현재시간</h1>
+<%= DateTime.now%>
