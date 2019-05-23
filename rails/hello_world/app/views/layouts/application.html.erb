@@ -4,15 +4,22 @@
     <title>HelloWorld</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <style>
+      img {
+        width: 200px;
+}
+    </style>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <a href="/contact">contact</a>
+  <h1>
+    <a href="/contacts/new">contact</a>
     <a href="/">home</a>
-    <%=image_tag("kisspng-pokkn-tournament-detective-pikachu-pokmon-yell-5b0e5f64c82ba6.1238238315276685808199.jpg") %>
+  </h1><br>
+
+  <%=image_tag("kisspng-pokkn-tournament-detective-pikachu-pokmon-yell-5b0e5f64c82ba6.1238238315276685808199.jpg") %>
       <%= yield %>
  
 

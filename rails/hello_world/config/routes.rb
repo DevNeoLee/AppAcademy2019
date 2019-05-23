@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'contacts/index'
+  get 'contacts/new'
+  get 'contacts/create'
   get '/'=>'home#hello_world'
   get '/ondex'=>'home#ondex'
   get '/index'=>'home#index'

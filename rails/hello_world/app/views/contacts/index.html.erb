@@ -1,0 +1,6 @@
+<h1>Contacts#index</h1>
+<ul>
+    <% @all_contacts.each do |contact| %>
+     <li><%= contact.name %> : <%= contact.content %></li>
+    <% end %>
+</ul>
