@@ -12,11 +12,11 @@ class ContactsController < ApplicationController
     @content= params[:content]
     new_contact = Contact.new(name: @name, email: @email, content: @content)
     
-    if new_contact.save
-      redirect_to "/contacts/index"
-    else
-      redirect_to "/contacts/new"
-    end
+    # if new_contact.save
+    #   redirect_to "/contacts/index"
+    # else
+    #   redirect_to "/contacts/new"
+    # end
 
   end
 end
