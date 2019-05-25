@@ -1,3 +1,11 @@
 <h1>Family Craft</h1>
 
-oh...
+<% @posts.each do |post| %>
+<li>name: <%=post.person%><br> description: <%=post.description %><br><br></li>
+<% end %>
+
+<form action="/author/create">
+    name: <input type="text" name="name"><br>
+    describe the work: <textarea name="description"></textarea><br>
+    <input type="submit">
+</form>
