@@ -2,7 +2,8 @@
 
 <% @posts.each do |post| %>
     <li>    
-        name: <%=post.person%> <a href="/author/delete?id=<%=post.id%>">delete</a> <a href="author/edit">edit</a><br> 
+        name: <%=post.person%> <a href="/author/delete?id=<%=post.id%>">delete</a> <a href="/author/edit?id=<%=post.id%>">edit</a><br>
+     
         description: <%=post.description %><br><br>
     </li>
 <% end %>

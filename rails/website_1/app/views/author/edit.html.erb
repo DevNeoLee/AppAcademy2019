@@ -1,0 +1,9 @@
+<h1>edit 해 보세요~!</h1>
+
+<form action="/author/update">
+    <input type="hidden" name="id" value="<%=@post.id%>">
+        name: <input type="text" value="<%=@post.name%>"><br><br>
+        description: <textarea><%=@post.description%></textarea><br><br>
+        <input type="submit"><br>
+
+</form>

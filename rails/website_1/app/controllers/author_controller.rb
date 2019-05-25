@@ -14,6 +14,14 @@ class AuthorController < ApplicationController
     end
 
     def edit
+        Post.find(params[:id])
+    end
 
+    def update
+        @post = Post.find(params[:id])
+        @post.name = params[:name]
+        @post.description = params[:description]
+        @post.save
+        redirect_to :root
     end
 end
