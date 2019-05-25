@@ -7,4 +7,13 @@ class AuthorController < ApplicationController
         Post.create(person: params[:name], description: params[:description])
         redirect_to :root
     end
+
+    def delete
+        Post.find(params[:id]).destroy
+        redirect_to :root
+    end
+
+    def edit
+
+    end
 end

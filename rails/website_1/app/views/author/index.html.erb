@@ -1,7 +1,10 @@
 <h1>Family Craft</h1>
 
 <% @posts.each do |post| %>
-<li>name: <%=post.person%><br> description: <%=post.description %><br><br></li>
+    <li>    
+        name: <%=post.person%> <a href="/author/delete?id=<%=post.id%>">delete</a> <a href="author/edit">edit</a><br> 
+        description: <%=post.description %><br><br>
+    </li>
 <% end %>
 
 <form action="/author/create">
