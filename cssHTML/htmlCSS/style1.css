@@ -1,0 +1,78 @@
+/* css file for index1.html */
+body {
+    background-color: #f4f4f4;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#main-header {
+    background-color: coral;
+    color: #fff;
+    text-align: center;
+}
+
+navbar {
+        background-color: black;
+        width:100%;
+        color: #fff;  
+}
+
+navbar ul {
+    padding: 0;
+    list-style: none;
+}
+
+navbar li {
+    float: left;
+    display: inline;
+}
+
+navbar a {
+    color: #fff;
+    text-decoration :none;
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+#showcase {
+    background-image: url();
+    background-position: center right;
+    height: 500px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#showcase h1 {
+    color: #fff;
+    font-size: 50px;
+    line-height: 1.6em;
+    padding-top :30px;
+}
+
+#main-footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top:40px;
+}
+
+@media(max-height: 600px){
+    #main{
+        width: 100%;
+        float: none;
+    }
+    #sidebar {
+        width: 300%;
+        float:none;
+    }
+}
