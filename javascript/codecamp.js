@@ -56,6 +56,41 @@ var myStr = "FirstLine\n\tSecondLine\nThirdLine";
 var ab = mystr + " dance ";
 ab += ab;
 
+//length
+var st ="hello"
+ab = st.length
+// st.length 
+//5
 
-console.log(quo);
-console.log(ab);
+//word blanks
+
+function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+    var result = ""
+
+    result = "The " + myAdjective + " " + myNoun  +" "+ myVerb +" "+ myAdverb;
+    return result;
+}
+
+//array
+var arr = ["hohoho", 23];
+var arr1 = [[23, 33], [33,99]];
+var abb = arr1[0]
+console.log(wordBlanks("dog", "big", "ran", "fast"));
+console.log(arr);
+console.log(abb);
+
+//
+// let callback = function() {
+//     console.log("It has been 5 sec!");
+// }
+// let timeToWait = 5000;
+
+// window.setTimeout(callback(), timeToWait);
+
+// ES5
+// window.setTimeout(function() {
+//     console.log("It has been 3 seconds!");
+// }, 3000); 
+
+//ES6
+window.setTimeout(() => console.log("It has been 3 seconds"), 3000);
