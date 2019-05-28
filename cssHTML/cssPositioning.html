@@ -25,13 +25,48 @@
         /*relative
         -nudging working!! 
         -coordinates relative to its original position
+        
+        *z-index: 
+            just a number
+            closer to..
         */
         .relative {
             position: relative;
             top: 50px;
             left:50px;
             background: green;
+
+            z-index: -1; 
         }
+
+        /*
+        absolute-
+        -doesn't take up space
+        -liftd up, placed on top of anything
+        -show by default
+        -coordinate of nearest ancestor that is not static, if none then window
+        -if width and height is auto, it stretches,
+        */
+        .absolute {
+            position: absolute;
+            background: red;
+            left: 50px;
+        }
+
+        /* 
+        fixed-
+        -behaves like absolute
+        -but coordinate system is window
+        */
+        .fixed {
+            position: fixed;
+            background: orange;
+            left: 0px;
+            top:30px;
+            width: 100%;
+            z
+        }
+
     </style>
 </head>
 <body>
@@ -39,14 +74,16 @@
     <div class="static">I AM STATIC</div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
         aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
-    <div class="relative">I am relative</div>
+    <div class="relative">
+        <div class="absolute">I am abs!!</div>I am relative</div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
             aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
-    <div class="">I am </div>
+    <div class="absolute">I am absolute</div>
     
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
                 aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
+    <div class = "fixed">I am fixed</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
             aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
 </body>
 </html>
