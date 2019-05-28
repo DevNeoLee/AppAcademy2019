@@ -30,18 +30,26 @@ let isPrime = function(number){
    return true;
 }
 
-// isPrime
-
-// function isPrime(n) {
-//     if (n < 2) { return false; }
-
-//     for (let i = 2; i < n; i++) {
-//         if (n % i === 0) {
-//             return false;
-//         }
-//     }
-
-//     return true;
-// }
-
 console.log(isPrime(13));
+
+//first n primes
+
+let firstNprimes = function(n) {
+    let nPrimes = [];
+    let sum = 0;
+
+    let i = 0;
+    while (nPrimes.length < n) {
+        if (isPrime(i) === true){
+            nPrimes.push(i);
+            sum += i;
+        }
+        i++;
+    }
+    return sum;
+}
+// 2, 3, 5, 7, 11, 13, 17
+console.log(firstNprimes(1)); //2
+console.log(firstNprimes(2)); // 5
+console.log(firstNprimes(3)); // 10
+console.log(firstNprimes(4)); // 17
