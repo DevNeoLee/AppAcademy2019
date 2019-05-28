@@ -1,15 +1,5 @@
 // fizzBuzz, takes an arr, returns a new arr every # is divisible by either 3 or 5 but not both
 
-let fizzBuzz = function(arr){
-    const fizzbuzzArr = [];
-
-    arr.foreach(el => {
-       if((ele % 3 == 0 && ele % 5 != 0) || (ele % 5 == 0 && ele % 3 != 0)) {
-           fizzbuzzArr.push(el);
-       }
-    });
-    return fizzBuzzArr;
-}
 
 function fizzBuzz(array) {
     const fizzBuzzArr = [];
@@ -22,16 +12,36 @@ function fizzBuzz(array) {
 
     return fizzBuzzArr;
 }
-let isPrime = functioin(number){
-    if (number < 2){
+
+console.log(fizzBuzz([3,5,15,3,4,5,6,7,8,9,15]));
+
+
+let isPrime = function(number){
+    if (number < 2) {
         return false;
     }
 
-    i = 2
-    for (i < number){
+    
+    for (let i = 2; i < number; i++){
         if (number % i == 0) {
             return false;
         }
-        return true;
     }
+   return true;
 }
+
+// isPrime
+
+// function isPrime(n) {
+//     if (n < 2) { return false; }
+
+//     for (let i = 2; i < n; i++) {
+//         if (n % i === 0) {
+//             return false;
+//         }
+//     }
+
+//     return true;
+// }
+
+console.log(isPrime(13));
