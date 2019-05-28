@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>positioning</title>
+
+    <style>
+        div {
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: gray;
+        }
+
+        /* static, relative, absolute, fixed 
+        /* default
+        nudging not working!!
+        */
+        .static {
+            position: static;
+            background: yellow;
+        }
+        /*relative
+        -nudging working!! 
+        -coordinates relative to its original position
+        */
+        .relative {
+            position: relative;
+            top: 50px;
+            left:50px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
+    <div class="static">I AM STATIC</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
+        aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
+    <div class="relative">I am relative</div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
+            aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
+    <div class="">I am </div>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
+                aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus magnam commodi reiciendis maxime quas nostrum
+            aspernatur esse quasi natus pariatur perferendis impedit eos iusto et, iste dolorum eius ipsa!</p>
+</body>
+</html>
