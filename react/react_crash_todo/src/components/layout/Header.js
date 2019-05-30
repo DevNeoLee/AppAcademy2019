@@ -15,4 +15,4 @@ const headerStyle = {
     padding: '10px'
 }
 
-export default Header
+export default Header;
