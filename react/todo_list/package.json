@@ -1,13 +1,11 @@
 {
-  "name": "react_crash_todo",
+  "name": "todo_list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1",
-    "uuid": "^3.3.2"
+    "react-scripts": "3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
