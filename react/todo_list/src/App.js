@@ -24,15 +24,16 @@ class App extends Component {
         title: 'hello there3',
         completed: false
       }
-    ]
-  }
+    ],
 
-  data1 = {
-    dada : [
-      { id:1,
-      title: 'hello there',
-      code: 'you got it'},
-      { id: 2,
+    dada: [
+      {
+        id: 1,
+        title: 'hello there',
+        code: 'you got it'
+      },
+      {
+        id: 2,
         title: 'how are you?',
         code: 'I am good'
       }, {
@@ -42,29 +43,30 @@ class App extends Component {
       },
     ]
   }
+
   render() {
   
   return (
     <div className="App">
     
-      <Todos abc={this.state.variable} da={this.data1.dada} />
+      <Todos abc={this.state.variable} da={this.state.dada} />
       <br/>
       <br/>
       <hr></hr>
-      <h1>App.js</h1>
+      <h1>잘 해 부르라고 잉! 앱제이에스여 여긴.</h1>
       <br />
       <br />
       <hr></hr>
-      <Todos1 abc={this.state.variable} da={this.data1.dada}/>
+      <Todos1 abc={this.state.variable} da={this.state.dada}/>
       <br />
       <br />
       <hr></hr>
-      <Todos2 abc={this.state.variable} da={this.data1.dada}/>
+      <Todos2 abc={this.state.variable} da={this.state.dada}/>
       <br />
       <br />
       <hr></hr>
-      <Random kko={this.state.variable[0]}/>
-      <Olaola jjj={this.state.variable}/>
+      {/* <Random kko={this.state.variable[0]}/>
+      <Olaola jjj={this.state.variable}/> */}
     
     
       
