@@ -26,12 +26,28 @@ class App extends Component {
       }
     ]
   }
+
+  data1 = {
+    dada : [
+      { id:1,
+      title: 'hello there',
+      code: 'you got it'},
+      { id: 2,
+        title: 'how are you?',
+        code: 'I am good'
+      }, {
+        id: 3,
+        title: 'have a good day',
+        code: 'dude'
+      },
+    ]
+  }
   render() {
   
   return (
     <div className="App">
     
-      <Todos abc={this.state.variable} />
+      <Todos abc={this.state.variable} da={this.data1.dada} />
       <br/>
       <br/>
       <hr></hr>
@@ -39,11 +55,11 @@ class App extends Component {
       <br />
       <br />
       <hr></hr>
-      <Todos1 abc={this.state.variable}/>
+      <Todos1 abc={this.state.variable} da={this.data1.dada}/>
       <br />
       <br />
       <hr></hr>
-      <Todos2 abc={this.state.variable}/>
+      <Todos2 abc={this.state.variable} da={this.data1.dada}/>
       <br />
       <br />
       <hr></hr>
