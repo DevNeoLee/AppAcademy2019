@@ -11,35 +11,35 @@ class App extends Component {
     variable: [
       {
         id:1,
-        title: 'hello there',
+        title: 'clean up, physically, mentally..',
         completed: false
       },
       {
         id: 2,
-        title: 'hello there2',
+        title: 'start everything a little bit each, always you wanted to start',
         completed: false
       },
       {
         id: 3,
-        title: 'hello there3',
+        title: 'be happy truly',
         completed: false
       }
     ],
 
-    dada: [
+    wanted: [
       {
         id: 1,
-        title: 'hello there',
-        code: 'you got it'
+        title: 'useKoreanName',
+        code: 'Gwanghyuk Lee'
       },
       {
         id: 2,
-        title: 'how are you?',
-        code: 'I am good'
+        title: 'useNewAccounts',
+        code: 'online and offline'
       }, {
         id: 3,
-        title: 'have a good day',
-        code: 'dude'
+        title: 'nice',
+        code: 'nice'
       },
     ]
   }
@@ -49,19 +49,22 @@ class App extends Component {
   return (
     <div className="App">
     
-      <Todos abc={this.state.variable} da={this.state.dada} />
+     
       <br/>
       <br/>
       <hr></hr>
-      <h1>잘 해 부르라고 잉! 앱제이에스여 여긴.</h1>
+      <h1>Todo list of gwanghyuk lee</h1>
+
+
+      <br />
+      <br />
+      <Todos abc={this.state.variable} da={this.state.wanted} />
+      <hr></hr>
+      <Todos1 abc={this.state.variable} da={this.state.wanted}/>
       <br />
       <br />
       <hr></hr>
-      <Todos1 abc={this.state.variable} da={this.state.dada}/>
-      <br />
-      <br />
-      <hr></hr>
-      <Todos2 abc={this.state.variable} da={this.state.dada}/>
+      <Todos2 abc={this.state.variable} da={this.state.wanted}/>
       <br />
       <br />
       <hr></hr>
