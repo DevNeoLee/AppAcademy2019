@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Todos from './components/Todos';
-import Todos1 from './components/Todos1';
-import Todos2 from './components/Todos2';
-import Random from './random';
-import Olaola from './components/olaola';
+import Random from './components/random';
 
 class App extends Component {
   state = {
@@ -38,8 +35,8 @@ class App extends Component {
         code: 'online and offline'
       }, {
         id: 3,
-        title: 'nice',
-        code: 'nice'
+        title: 'no talking and just breathe',
+        code: 'right'
       },
     ]
   }
@@ -55,23 +52,16 @@ class App extends Component {
       <br />
       <br />
       <hr></hr>
-
       <br />
-      <br />
+      <h2>todos</h2>
       <Todos todos={this.state.todos} da={this.state.wanted} />
       <hr></hr>
-      <Todos1 todos={this.state.todos} da={this.state.wanted}/>
       <br />
-      <br />
-      <hr></hr>
-      <Todos2 todos={this.state.todos} da={this.state.wanted}/>
-      <br />
-      <br />
-      <hr></hr>
-      <Random kko={this.state.wanted[0]}/>
-      <Olaola jjj={this.state.todos}/>
+      <h2>wanted to start</h2>
+      <Random kko={this.state.wanted}/>
+ 
     
-    
+
       
     </div>
   );

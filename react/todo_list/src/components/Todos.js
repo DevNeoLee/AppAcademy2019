@@ -5,13 +5,12 @@ class Todos extends Component {
         
         return ( this.props.todos.map((todo) => (
             <div>
-                <h1>hmm</h1>
-            <h3>
-                #: {todo.id}<br/> 
-                title: {todo.title} <br/> 
+
+                {todo.id}. 
+                 {todo.title} <br/> 
                 completed:{todo.completed}<br/>
-            </h3>
-            <h1>올라 올라 {this.props.da[0].id} </h1>
+            
+            
             </div>
             
         )));
