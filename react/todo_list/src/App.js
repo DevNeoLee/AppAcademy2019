@@ -8,7 +8,7 @@ import Olaola from './components/olaola';
 
 class App extends Component {
   state = {
-    variable: [
+    todos: [
       {
         id:1,
         title: 'clean up things(physicaly, internaly..)',
@@ -49,22 +49,22 @@ class App extends Component {
   return (
     <div className="App">
     
-     
-      <br/>
-      <br/>
-      <hr></hr>
+      <br />
+      <br />
       <h1>Todo list of gwanghyuk lee</h1>
-
-
-      <br />
-      <br />
-      <Todos abc={this.state.variable} da={this.state.wanted} />
-      <hr></hr>
-      <Todos1 abc={this.state.variable} da={this.state.wanted}/>
       <br />
       <br />
       <hr></hr>
-      <Todos2 abc={this.state.variable} da={this.state.wanted}/>
+
+      <br />
+      <br />
+      <Todos todos={this.state.todos} da={this.state.wanted} />
+      <hr></hr>
+      <Todos1 todos={this.state.todos} da={this.state.wanted}/>
+      <br />
+      <br />
+      <hr></hr>
+      <Todos2 todos={this.state.todos} da={this.state.wanted}/>
       <br />
       <br />
       <hr></hr>
