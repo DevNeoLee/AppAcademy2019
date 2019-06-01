@@ -7,8 +7,8 @@ export class Olaola extends Component {
                 <hr></hr>
                 <h1>olaola</h1>
                 <div>
-                    this.props.jjj.map((oh) => (
-                    oh.id
+                    this.props.jjj.map((jj) => (
+                    jj.id
                 ));
                 }
                 </div>

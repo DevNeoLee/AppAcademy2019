@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Todos2 extends Component {
     render() {
 
-        return this.props.todostod.map((todo) => (
+        return this.props.todos.map((todo) => (
             <div>
             <h1>이건 3번째 거란다!</h1>
             <h3>

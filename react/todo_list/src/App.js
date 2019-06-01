@@ -68,8 +68,8 @@ class App extends Component {
       <br />
       <br />
       <hr></hr>
-      {/* <Random kko={this.state.variable[0]}/>
-      <Olaola jjj={this.state.variable}/> */}
+      <Random kko={this.state.wanted[0]}/>
+      <Olaola jjj={this.state.todos}/>
     
     
       
