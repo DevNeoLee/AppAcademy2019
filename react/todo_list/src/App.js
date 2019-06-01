@@ -11,12 +11,12 @@ class App extends Component {
     variable: [
       {
         id:1,
-        title: 'clean up, physically, mentally..',
+        title: 'clean up things(physicaly, internaly..)',
         completed: false
       },
       {
         id: 2,
-        title: 'start everything a little bit each, always you wanted to start',
+        title: 'start everything always you wanted to start a little bit each',
         completed: false
       },
       {
@@ -30,7 +30,7 @@ class App extends Component {
       {
         id: 1,
         title: 'useKoreanName',
-        code: 'Gwanghyuk Lee'
+        code: 'gwanghyuk lee'
       },
       {
         id: 2,
