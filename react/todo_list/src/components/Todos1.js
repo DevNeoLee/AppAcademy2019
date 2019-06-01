@@ -5,7 +5,6 @@ class Todos1 extends Component {
 
         return this.props.todos.map((hoho) => (
             <div>
-                <h1>두번째인디....;;</h1>
             <h3>
                 id: {hoho.id}<br />
                 title: {hoho.title} <br />

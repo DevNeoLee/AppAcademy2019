@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 class Todos extends Component {
     render() {
-       
+        
         return ( this.props.todos.map((todo) => (
             <div>
+                <h1>hmm</h1>
             <h3>
-                id: {todo.id}<br/> 
+                #: {todo.id}<br/> 
                 title: {todo.title} <br/> 
                 completed:{todo.completed}<br/>
             </h3>
