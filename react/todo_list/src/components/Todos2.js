@@ -3,13 +3,13 @@ import React, { Component } from 'react';
 class Todos2 extends Component {
     render() {
 
-        return this.props.todos.map((hoho) => (
+        return this.props.todostod.map((todo) => (
             <div>
             <h1>이건 3번째 거란다!</h1>
             <h3>
-                id: {hoho.id}<br />
-                title: {hoho.title} <br />
-                completed:{hoho.completed}<br />
+                id: {todo.id}<br />
+                title: {todo.title} <br />
+                completed:{todo.completed}<br />
             </h3>
             </div>
         ));
