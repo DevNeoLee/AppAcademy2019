@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { Navbar, NavbarBrand } from 'reactstrap';
 import './App.css';
 
 class App extends Component {
   render() {
   return (
     <div className="App">
-      <header className="App-header">
-        Con Fusion
-      </header>
+      <Navbar dark color="primary">
+      <div className="container">
+        <NavbarBrand href="/">Restorant Con Fusion</NavbarBrand>
+      </div>
+      </Navbar>
     </div>
   );
  }
