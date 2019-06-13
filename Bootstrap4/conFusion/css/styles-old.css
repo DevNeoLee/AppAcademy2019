@@ -19,7 +19,7 @@
 .jumbotron {
     padding: 70px 30px 70px 30px;
     margin: 0px auto;
-    background: #9575CD;
+    background:@background-pale;
     color: floralwhite;
 }
 
@@ -37,4 +37,16 @@ body {
 
 .navbar-dark {
     background-color: #512DA8;
+}
+
+.carousel {
+    background: @background-dark;
+
+    .carousel-item {
+        height: @carousel-item-height;
+
+        img {
+            position: absolute;
+        }
+    }
 }
