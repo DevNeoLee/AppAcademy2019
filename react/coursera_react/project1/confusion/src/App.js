@@ -7,8 +7,7 @@ function App() {
   return ( 
     <div> 
       <Navbar dark color="primary">
-        <NavbarBrand href="/'">Restaurant Number Three</NavbarBrand>
-        <NavbarBrand href="/'">Restaurant Number 2</NavbarBrand>
+        <NavbarBrand href="/'">Save Our Forrest Campaign</NavbarBrand>
       </Navbar>  
       <Menu/>
     </div>

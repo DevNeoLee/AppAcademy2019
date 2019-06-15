@@ -1,121 +1,94 @@
 import React, { Component } from 'react';
-import { Media, Alert, Badge, Breadcrumb, BreadcrumbItem, 
-        ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem, Button, ButtonGroup, 
-        Card, CardBody, CardFooter, CardHeader, CardImg, CardSubtitle, CardText, CardTitle, 
-        Carousel } from 'reactstrap';
+import { 
+        Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption
+        } from 'reactstrap';
+
+        const items = [
+            {
+              src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
+              altText: 'Slide A',
+              caption: 'Slide 1'
+            },
+            {
+              src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
+              altText: 'Slide B',
+              caption: 'Slide 2'
+            },
+            {
+              src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
+              altText: 'Slide C',
+              caption: 'Slide 3'
+            }
+          ];
 
 class Menu extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            dishes: [
-            {
-                id: 0,
-                name:'forrest waterfall bridge ',
-                image: 'assets/images/image2.jpg',
-                category: 'deep forrest bridg',
-                label:'Hot',
-                age:'250',
-                description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'                        },
-             {
-                id: 1,
-                name:'the oldest tree',
-                image: 'assets/images/image1.jpg',
-                category: 'endangered plant',
-                label:'',
-                price:'1.99',
-                description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce'                        },
-             {
-                id: 2,
-                name:'tallest tree forrest',
-                image: 'assets/images/image3.jpg',
-                category: 'straight up',
-                label:'New',
-                price:'1.99',
-                description:'A quintessential ConFusion experience, is it a vada or is it a donut?'                        },
-             {
-                id: 3,
-                name:'most beatufiful tree',
-                image: 'assets/images/image4.jpg',
-                category: 'africa',
-                label:'',
-                price:'2.99',
-                description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'                        }
-            ]
-        }
+        this.state = { activeIndex: 0 };
+        this.next = this.next.bind(this);
+        this.previous = this.previous.bind(this);
+        this.goToIndex = this.goToIndex.bind(this);
+        this.onExiting = this.onExiting.bind(this);
+        this.onExited = this.onExited.bind(this);   
     }
+
+    onExiting() {
+        this.animating = true;
+      }
+    
+      onExited() {
+        this.animating = false;
+      }
+    
+      next() {
+        if (this.animating) return;
+        const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+        this.setState({ activeIndex: nextIndex });
+      }
+    
+      previous() {
+        if (this.animating) return;
+        const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+        this.setState({ activeIndex: nextIndex });
+      }
+    
+      goToIndex(newIndex) {
+        if (this.animating) return;
+        this.setState({ activeIndex: newIndex });
+      }
 
     render(){
+        const { activeIndex } = this.state;
 
-        const menu = this.state.dishes.map((dish) => {
-            return (
-                <div key={dish.id} className="col-12 mt-5">
-                    <Alert color="warning">Warning! There was a report that hurricane might be expected this fall {dish.category}. Please be cautious!! </Alert>
-                    <h1><Badge color="primary">great day!</Badge></h1>
-                    <Breadcrumb>
-                        <BreadcrumbItem active>today</BreadcrumbItem>
-                        <BreadcrumbItem>tomorrow</BreadcrumbItem>
-                        <BreadcrumbItem active>day after tomorrow</BreadcrumbItem>
-                    </Breadcrumb>
-
-                    <ButtonDropdown> 
-                        <DropdownToggle>on/off </DropdownToggle>
-                        <DropdownMenu>    
-                            <DropdownItem header>Header</DropdownItem>
-                            <DropdownItem disabled>Action</DropdownItem>
-                            <DropdownItem>...</DropdownItem>
-
-                        </DropdownMenu>    
-                    </ButtonDropdown>
-
-                    <ButtonGroup>
-                        <Button color="link">1</Button>
-                        <Button color="link">2</Button>
-                        <Button color="link">3</Button>
-                    </ButtonGroup>
-
-                    <Card>
-                        <CardHeader>
-                            <CardImg top width="100%" src="https://printclublondon.com/wp-content/uploads/2018/12/Jungle-Book-Aqua-Green.jpg" alt="Card image cap" />
-                        </CardHeader>
-                        <CardBody>
-                            <CardTitle>Card title</CardTitle>
-                        <   CardSubtitle>Card subtitle</CardSubtitle>
-                        </CardBody>
-                        <CardFooter>
-                            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                            <Button>Button</Button>
-                        </CardFooter>
-                       
-                    </Card>
-
-
-
-                    <Media tag="li">
-                        <Media left middle>
-                            <Media object src={dish.image} alt={dish.name} ></Media>
-                        </Media>
-                        <Media body className="ml-5">
-                            <Media heading>{dish.name}</Media>
-                            <p>{dish.description}</p>
-                        </Media> 
-                    </Media> 
-                </div>
-            );
+        const slides = items.map((item) => {
+          return (
+            <CarouselItem
+              onExiting={this.onExiting}
+              onExited={this.onExited}
+              key={item.src}
+            >
+              <img src={item.src} alt={item.altText} />
+              <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+            </CarouselItem>
+          );
         });
 
-        return(
-            <div className="container">
-                <div className="row">
-                    <Media list>
-                        {menu}
-                    </Media>
-                </div>
+         
+    
 
-            </div>
+        return(
+
+                <Carousel
+                    activeIndex={activeIndex}
+                    next={this.next}
+                    previous={this.previous}>
+                        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                        {slides}
+                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+                </Carousel>
         );
-    }
+        }
 }
 
 export default Menu;
