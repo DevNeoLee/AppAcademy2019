@@ -9,7 +9,9 @@ function App() {
       <Navbar dark color="primary">
         <NavbarBrand href="/'">Save Our Forrest Campaign</NavbarBrand>
       </Navbar>  
+
       <Menu/>
+      
     </div>
   );
 }
