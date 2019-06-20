@@ -90,3 +90,8 @@ puts add_nums(3, 3)
 
 second_num = gets.to_i 
 
+def mapIt(arr, list)
+    arr.map |ele|
+      list.includes(ele)  
+    end
+end
