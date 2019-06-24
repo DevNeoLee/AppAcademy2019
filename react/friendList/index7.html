@@ -11,30 +11,33 @@
 <body>
     <div id='app'></div>
 
-    <script type='text/babel'>
-    function FriendsList (props) {
-      return (
-        <ul>
-          {props.list.map((name) => (
-            <li key={name}>
-              <span>{name}</span>
-              <button onClick={() => props.onRemoveFriend(name)}>X</button>
-            </li>
-          ))}
-        </ul>
-      )
-    }
+    <script type='text/babel'>  
+        function FriendsList(props) {
+            return(
+                <ul>
+                    {props.list.map((name)=> (
+                        <li key={name}>
+                            <span>{name}</span>
+                            <button onClick={()=>props.onRemoveFriend(name)}>delete</button>
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
+
     class App extends React.Component {
       constructor(props) {
         super(props)
         this.state = {
-          friends: ['Jordyn', 'Mikenzi', 'Jake'],
+          friends: ['josh', 'brian', 'john', 'jia'],
           input: '',
         }
         this.handleRemoveFriend = this.handleRemoveFriend.bind(this)
         this.updateInput = this.updateInput.bind(this)
         this.handleAddFriend = this.handleAddFriend.bind(this)
       }
+
+      
       handleAddFriend() {
         this.setState((currentState) => {
           return {
@@ -43,6 +46,8 @@
           }
         })
       }
+
+    
       handleRemoveFriend(name) {
         this.setState((currentState) => {
           return {
@@ -50,11 +55,20 @@
           }
         })
       }
+
+      
       updateInput(e) {
         const value = e.target.value
         this.setState({
           input: value
         })
+      }
+
+      updateInput(e) {
+          const value = e.target.value
+          this.setState({
+            input: value
+          })
       }
       render() {
         return (
