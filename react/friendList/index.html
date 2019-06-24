@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Freinds List</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        const name ="Josh"
+        const handle = "@hotmail.com"
+
+       const nameElement = React.createElement(
+           'h1',
+           null,
+           name
+       )
+
+       const handleElement = React.createElement(
+           'h3',
+           null,
+           handle
+       )
+
+       const wrapperElement = React.createElement(
+           'div',
+           {id: 'container'},
+           nameElement,
+           handleElement
+       )
+
+        ReactDOM.render(wrapperElement, document.getElementById('app'))
+        ReactDOM.render(wrapperElement, document.getElementById('app'))
+    </script>
+</body>
+</html>

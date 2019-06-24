@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+</head>
+<body>
+    <div id='app'></div>
+    
+
+<script>
+    const name = "Josh"
+    const handle =" wow Lee"
+    const hi= "hello worldldldldldldl!!!"
+
+    function NameComponent(props) {
+        return React.createElement(
+            'h3',
+            null,
+            props.name,
+        )
+    }
+    
+    function HandleComponent(props) {
+        return React.createElement(
+            'h3',
+            null,
+            props.handle,
+        )
+    }
+    
+    function HiComponent(props) {
+        return React.createElement(
+            'h2',
+            null,
+            props.hi,
+        )
+    }
+       
+   
+   const wrapperElement = React.createElement(
+            'div',
+            { id: 'container' },
+            React.createElement(NameComponent, { name: 'Josh'}),
+            React.createElement(HandleComponent, { handle: 'Lee'}),
+            React.createElement(HiComponent, { hi: 'hello!!!' }),
+        )
+    
+
+    ReactDOM.render(wrapperElement, document.getElementById('app'))
+        
+    </script>
+    
+</body>
+</html>
