@@ -37,7 +37,6 @@
         this.handleAddFriend = this.handleAddFriend.bind(this)
       }
 
-      
       handleAddFriend() {
         this.setState((currentState) => {
           return {
@@ -47,7 +46,6 @@
         })
       }
 
-    
       handleRemoveFriend(name) {
         this.setState((currentState) => {
           return {
@@ -56,7 +54,6 @@
         })
       }
 
-      
       updateInput(e) {
         const value = e.target.value
         this.setState({
@@ -64,12 +61,6 @@
         })
       }
 
-      updateInput(e) {
-          const value = e.target.value
-          this.setState({
-            input: value
-          })
-      }
       render() {
         return (
           <div>
