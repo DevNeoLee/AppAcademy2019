@@ -12,23 +12,26 @@
 <body>
     <div id = 'app'></div>
 
-    <script type=text/babel>
-        const name = 'josh'
-        const lastname = 'lee'
+    <script type='text/babel'>
+       
+        const friendsList = ['david', 'ben', 'joseph', 'mike']
 
-        function NameComponent(props) {
-            return <h1>name: {props.name} </h1>
+        function FriendsList(props) {
+            return (
+                <ul>
+                    {props.list.map((name) => (
+                    <li key={name}> 
+                        {name} 
+                    </li>
+                    ))}
+                </ul>
+            )
         }
-
-        function LastnameComponent(props) {
-            return <h3> lastName: {props.lastname} </h3>
-        }
-
+    
         function App() {
             return (
-                <div id='container'>
-                    <NameComponent name={name} />
-                    <LastnameComponent lastname={lastname} />
+                <div>
+                    <FriendsList list ={friendsList} />
                 </div>
             )
         }
