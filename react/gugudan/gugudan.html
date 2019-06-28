@@ -18,9 +18,9 @@
         const Question = (props) => {
             return (
                 <div>
-                    <h1>구구단</h1>
-                    <h2>what is...</h2>
-                    <h3>{props.num1} 곱하기 {props.num2} 는 뭘까요?</h3>
+                    <h1>Multiply Quiz</h1>
+                    <h2>Do you know what is...</h2>
+                    <h3>{props.num1} times {props.num2} ?</h3>
                 </div>
             )
         }
@@ -33,7 +33,7 @@
                     num2: Math.ceil(Math.random()*9),
                     value: '',
                     answer: '',
-                    result: '결과:',
+                    result: 'result:',
                 }
             }
 
@@ -43,7 +43,7 @@
                         e.preventDefault();
                         if (parseInt(this.state.value) === this.state.num1 * this.state.num2) {
                             this.setState({
-                                result : '맞았어요!^^',
+                                result : 'You got it!: )',
                                 num1: Math.ceil(Math.random()*9),
                                 num2: Math.ceil(Math.random()*9),
                                 value: '',
@@ -51,7 +51,7 @@
                                  })
                         } else {
                             this.setState({
-                                result: '틀림! 다시 시도해 보세요!',
+                                result: 'Sorry, you can try again!',
                                 value: '',
                                 answer: '',
                             })
@@ -66,7 +66,7 @@
                       <input type='number' value={this.state.value} onChange = {this.onChange}/>
                       <button type='submit'>submit</button>
                     </form>
-                    <div> 정답: {this.state.answer}</div>
+                    <div> Answer: {this.state.answer}</div>
                     <br />
                     <div>{this.state.result}</div>
                 </div>
