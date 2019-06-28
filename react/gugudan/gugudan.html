@@ -28,28 +28,51 @@
         class Gugudan extends React.Component {
             constructor(props){
                 super(props)
-
                 this.state = {
                     num1: Math.ceil(Math.random()*9),
                     num2: Math.ceil(Math.random()*9),
                     value: '',
-                    result: '',
+                    answer: '',
+                    result: '결과:',
                 }
+
+                // this.state.num1 = this.state.num1.bind(this)
+                // this.state.num2 = this.state.num2.bind(this)
+                // this.state.value = this.state.value.bind(this)
+                // this.state.result = this.state.result.bind(this)
             }
             render(){
             return (
                 <div>
                     <Question num1={this.state.num1} num2={this.state.num2}/>
-                    <form>
-                      <input type='number' value={this.state.value} />
+                    <form onSubmit = {(e) => {
+                        e.preventDefault();
+                        if (parseInt(this.state.value) === this.state.num1 * this.state.num2) {
+                            this.setState({
+                                result : '맞았어요!^^',
+                                num1: Math.ceil(Math.random()*9),
+                                num2: Math.ceil(Math.random()*9),
+                                value: '',
+                                answer: this.state.num1 * this.state.num2,
+                                 })
+                        } else {
+                            this.setState({
+                                result: '틀림! 다시 시도해 보세요!',
+                                value: '',
+                                answer: '',
+                            })
+                        }
+                        }}>
+                      <input type='number' value={this.state.value} onChange={(e) => this.setState({value: e.target.value})}/>
                       <button type='submit'>submit</button>
                     </form>
-                    
+                    <div> 정답: {this.state.answer}</div>
+                    <br />
+                    <div>{this.state.result}</div>
                 </div>
             )
             }
         }
-        
         ReactDOM.render(<Gugudan />, document.getElementById('app'))
     </script>
 </body>
