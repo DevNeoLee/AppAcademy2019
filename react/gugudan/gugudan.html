@@ -15,7 +15,7 @@
         
     <script type='text/babel'>
 
-        function Question(props){
+        const Question = (props) => {
             return (
                 <div>
                     <h1>구구단</h1>
@@ -35,17 +35,11 @@
                     answer: '',
                     result: '결과:',
                 }
-
-                // this.state.num1 = this.state.num1.bind(this)
-                // this.state.num2 = this.state.num2.bind(this)
-                // this.state.value = this.state.value.bind(this)
-                // this.state.result = this.state.result.bind(this)
             }
-            render(){
-            return (
-                <div>
-                    <Question num1={this.state.num1} num2={this.state.num2}/>
-                    <form onSubmit = {(e) => {
+
+            onChange=(e) => this.setState({value: e.target.value})
+
+            onSubmit = (e) => {
                         e.preventDefault();
                         if (parseInt(this.state.value) === this.state.num1 * this.state.num2) {
                             this.setState({
@@ -62,8 +56,14 @@
                                 answer: '',
                             })
                         }
-                        }}>
-                      <input type='number' value={this.state.value} onChange={(e) => this.setState({value: e.target.value})}/>
+                        }
+
+            render(){
+            return (
+                <div>
+                    <Question num1={this.state.num1} num2={this.state.num2}/>
+                    <form onSubmit = {this.onSubmit} >
+                      <input type='number' value={this.state.value} onChange = {this.onChange}/>
                       <button type='submit'>submit</button>
                     </form>
                     <div> 정답: {this.state.answer}</div>
