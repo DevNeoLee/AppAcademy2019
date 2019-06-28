@@ -26,7 +26,7 @@
         }
 
         class Gugudan extends React.Component {
-            constructor(props){
+            constructor(props) {
                 super(props)
                 this.state = {
                     num1: Math.ceil(Math.random()*9),
@@ -37,7 +37,7 @@
                 }
             }
 
-            onChange=(e) => this.setState({value: e.target.value})
+            onChange=(e) => this.setState( {value: e.target.value})
 
             onSubmit = (e) => {
                         e.preventDefault();
@@ -49,27 +49,30 @@
                                 value: '',
                                 answer: this.state.num1 * this.state.num2,
                                  })
+                            this.honey.focus()
                         } else {
                             this.setState({
                                 result: 'Sorry, you can try again!',
                                 value: '',
                                 answer: '',
                             })
+                            this.honey.focus()
                         }
                         }
+            donut
 
             render(){
             return (
-                <div>
+                <React.Fragment>
                     <Question num1={this.state.num1} num2={this.state.num2}/>
                     <form onSubmit = {this.onSubmit} >
-                      <input type='number' value={this.state.value} onChange = {this.onChange}/>
+                      <input ref = {(kiss) => {this.honey = kiss}} type='number' value={this.state.value} onChange = {this.onChange}/>
                       <button type='submit'>submit</button>
                     </form>
                     <div> Answer: {this.state.answer}</div>
                     <br />
                     <div>{this.state.result}</div>
-                </div>
+                </React.Fragment>
             )
             }
         }
